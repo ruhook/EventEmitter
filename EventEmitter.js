@@ -13,6 +13,10 @@ class EventEmitter {
 
   removeListener(type, hander) {
     if (!this._events[type]) return
+    if (!hander) {
+      this._events[type].length = 0
+      return
+    }
     if (this._events[type].indexOf(hander) === -1) return
     this._events[type].splice(this._events[type].indexOf(hander, 1))
   }

@@ -15,7 +15,7 @@ let event = new EventEmitter()
 event.on(type, handle)   // 绑定事件
 event.once(type, handle)   // 单次绑定事件
 event.addListener(type, handle)  // _events 尾部添加事件  等价于 on
-event.removeListener(type, handle)  //  移除_events[type]里符合的handle
+event.removeListener(type, handle)  //  移除_events[type]里符合的handle,  handle可以不传。 直接移除_events[type]
 
 event.emit(type, ...args)  // 触发事件。 
 ```
